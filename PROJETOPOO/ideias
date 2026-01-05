@@ -1,0 +1,25 @@
+1 - Organizar a Estrutura de pacotes:
+- entidades
+- controle
+- fronteira
+- excecoes
+
+OBS: Cada camada deve ser  um package diferente com suas proprias classes, etc
+
+2 - Camada de entidades e excecoes:
+  1 - Criar as excecoes
+  2 - criar a classe cliente (CPF (único), nome, e-mail, telefone e data de cadastro)
+  3 - implementar hierarquia de espaços
+  4 - interface de serviços (Crie a interface ServicoAdicional com os métodos getDescricao() e getValorTotal() e suas implementações.)
+
+3 - Camada de repositores (PERSISTENCIA):
+ 1 - criar a classe repositor para clientes, espacos e reservas.
+ 2 - usar hashmap como estrutura de armazenamento para busca rapida de cpf ou id
+ 3 - implemente os métodos salvarArquivo e carregarArquivo usando ObjectOutputStream e ObjectInputStream imediatamente.
+
+4 - Classe administradorSistema:
+ 1 - classe no pack controle onde as regras de negocio devem estar
+ 2 - deve receber os repositórios e implementar as regras de negócio.
+
+5 - Interface textual (menus):
+ 1 - so comece o menuprincipal quando a logica  
