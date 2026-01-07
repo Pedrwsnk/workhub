@@ -4,7 +4,7 @@
 - fronteira
 - excecoes
 
-OBS: Cada camada deve ser  um package diferente com suas proprias classes, etc
+OBS: Cada camada deve ser um package diferente com suas proprias classes, etc
 
 2 - Camada de entidades e excecoes:
   1 - Criar as excecoes
@@ -22,4 +22,51 @@ OBS: Cada camada deve ser  um package diferente com suas proprias classes, etc
  2 - deve receber os repositórios e implementar as regras de negócio.
 
 5 - Interface textual (menus):
- 1 - so comece o menuprincipal quando a logica  
+ 1 - so comece o menuprincipal quando a logica estiver pronta
+ 2 - cada funcionalidade deve ter seu submenu(menuclientes, menureserva)
+ 3 - usar switch case dentro de um while para manter o programa rodando ate o usuario deicidir sair
+
+
+ESTRUTURA:
+ workhub/
+│
+├── Main.java (Classe de entrada que inicia o sistema)
+│
+├── entidades/ (Camada de Modelo)
+│   ├── Cliente.java
+│   ├── Espaco.java (Abstrata)
+│   ├── EstacaoTrabalho.java
+│   ├── SalaPrivada.java 
+│   ├── SalaReuniao.java 
+│   ├── Auditorio.java 
+│   ├── Reserva.java
+│   ├── ServicoAdicional.java (Interface) 
+│   ├── CafePremium.java 
+│   ├── Locker.java 
+│   ├── Estacionamento.java 
+│   └── RecebimentoCorrespondencia.java
+│
+├── controle/ (Camada de Lógica e Repositórios)
+│   ├── AdministradorSistema.java 
+│   ├── RepositorioClientes.java
+│   ├── RepositorioEspacos.java
+│   └── RepositorioReservas.java
+│
+├── fronteira/ (Camada de Interface Textual/Menus)
+│   ├── MenuPrincipal.java
+│   ├── MenuClientes.java
+│   ├── MenuEspacos.java
+│   ├── MenuReservas.java
+│   └── MenuRelatorios.java
+│
+└── excecoes/ (Classes de Erro Personalizadas)
+    ├── ClienteJaCadastradoException.java 
+    ├── ClienteNaoEncontradoException.java 
+    ├── EspacoIndisponivelException.java
+    ├── ReservaNaoEncontradaException.java
+    ├── ServicoInvalidoException.java
+    └── FalhaPersistenciaException.java
+
+
+    observações do trabalho:
+     - em excecoes, cada exceção estende a classe Exception (ja existente na biblioteca do java)

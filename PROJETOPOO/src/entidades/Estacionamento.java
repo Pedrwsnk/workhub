@@ -9,6 +9,14 @@ public class Estacionamento implements ServicoAdicional {
         this.valorHora = valorHora;
     }
 
+    public int getDuracaoHoras() {
+        return duracaoHoras;
+    }
+
+    public double getValorHora() {
+        return valorHora;
+    }
+
     @Override
     public String getDescricao() {
         return "Estacionamento (" + duracaoHoras + " horas)";

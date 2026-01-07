@@ -9,6 +9,14 @@ public class Locker implements ServicoAdicional {
         this.valorPorUnidade = valorPorUnidade;
     }
 
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public double getValorPorUnidade() {
+        return valorPorUnidade;
+    }
+
     @Override
     public String getDescricao() {
         return "Locker (" + quantidade + " unidades)";

@@ -7,6 +7,10 @@ public class CafePremium implements ServicoAdicional {
         this.valor = valor;
     }
 
+    public double getValor() {
+        return valor;
+    }
+
     @Override
     public String getDescricao() {
         return "Café Premium";
