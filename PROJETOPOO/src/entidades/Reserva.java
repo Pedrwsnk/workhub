@@ -33,6 +33,13 @@ public class Reserva implements Serializable {
         return horas * espaco.getValorHora();
     }
 
+    public double calcularPrecoFinal() {
+    long horas = java.time.Duration.between(horaInicio, horaFim).toHours();
+    if (horas <= 0) horas = 1;
+    double totalServicos = servicos.stream().mapToDouble(ServicoAdicional::getValorTotal).sum();
+    return (horas * espaco.getValorHora()) + totalServicos;
+}
+
     public void adicionarServico(ServicoAdicional servico) {
         this.servicosAdicionais.add(servico);
         this.valorTotal += servico.getValorTotal();
